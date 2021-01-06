@@ -32,7 +32,7 @@ class _SpashScreenState extends State<SpashScreen> {
   }
 
   void navigationPageHome() {
-    Navigator.of(context).pushReplacementNamed('/Login');
+    Navigator.of(context).pushReplacementNamed('/HomePage');
   }
 
   void navigationPageWel() {

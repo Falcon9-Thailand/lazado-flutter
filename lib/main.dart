@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:naiban/views/home.dart';
 import 'package:naiban/views/homeScreen.dart';
 import 'package:naiban/views/loginScreen.dart';
 import 'package:naiban/views/registerScreen.dart';
