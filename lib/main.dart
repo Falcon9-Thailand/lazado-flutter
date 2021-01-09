@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naiban/views/detail/productDetailScreen.dart';
 import 'package:naiban/views/homeScreen.dart';
 import 'package:naiban/views/loginScreen.dart';
 import 'package:naiban/views/registerScreen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/Wellcome': (context) => Wellcome(),
         '/Register': (context) => RegisterScreen(),
         '/Login': (context) => LoginScreen(),
+        '/ProductDetailScreen': (context) => ProductDetailScreen(),
       },
       home: SpashScreen(),
     );

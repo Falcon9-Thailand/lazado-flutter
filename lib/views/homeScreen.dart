@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:naiban/themes/color_app.dart';
+import 'package:naiban/views/detail/productDetailScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String firstHalf;
-  String firstHalf2;
   String secondHalf;
   bool currentuser = true;
   String titleText = "น้ำยาล้างจาน แกลลอน 3.6 ลิตร ซันไลต์";
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       firstHalf = titleText.substring(0, 10);
     }
     if (titleText2.length > 15) {
-      firstHalf2 = titleText.substring(0, 15);
+      titleText.substring(0, 15);
     }
   }
 
@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: BodyHomeScreen(
         size: size,
         firstHalf: firstHalf,
-        firstHalf2: firstHalf2,
         currentuser: currentuser,
       ),
     );
@@ -47,12 +46,10 @@ class BodyHomeScreen extends StatelessWidget {
     @required this.size,
     @required this.firstHalf,
     this.currentuser,
-    this.firstHalf2,
   }) : super(key: key);
 
   final Size size;
   final String firstHalf;
-  final String firstHalf2;
   final bool currentuser;
   @override
   Widget build(BuildContext context) {
@@ -65,7 +62,10 @@ class BodyHomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ContentHomeScreen(size: size, firstHalf: firstHalf),
+              ContentHomeScreen(
+                size: size,
+                firstHalf: firstHalf,
+              ),
             ],
           ),
         ),
@@ -173,12 +173,10 @@ class ContentHomeScreen extends StatelessWidget {
     Key key,
     @required this.size,
     @required this.firstHalf,
-    this.firstHalf2,
   }) : super(key: key);
 
   final Size size;
   final String firstHalf;
-  final String firstHalf2;
 
   @override
   Widget build(BuildContext context) {
@@ -213,11 +211,19 @@ class ContentHomeScreen extends StatelessWidget {
                   width: size.width,
                   height: size.height * 0.28,
                   child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) =>
-                        CardItemProducts(size: size, firstHalf: firstHalf),
-                  ),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      itemBuilder: (context, index) => CardItemProducts(
+                            size: size,
+                            firstHalf: firstHalf,
+                            prass: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) =>
+                                          ProductDetailScreen(product: index)));
+                            },
+                          )),
                 )
               ]),
           Padding(
@@ -265,7 +271,7 @@ class ContentHomeScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: size.width * .4,
+                          width: size.width * .3,
                           height: size.height,
                           // color: Colors.green,
                           child: SvgPicture.asset("assets/icons/first.svg"),
@@ -393,11 +399,12 @@ class CardItemProducts extends StatelessWidget {
     Key key,
     @required this.size,
     @required this.firstHalf,
+    this.prass,
   }) : super(key: key);
 
   final Size size;
   final String firstHalf;
-
+  final Function prass;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -419,11 +426,14 @@ class CardItemProducts extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.all(5),
-              width: size.width,
-              height: 90,
-              child: SvgPicture.asset("assets/icons/first.svg"),
+            InkWell(
+              onTap: prass,
+              child: Container(
+                margin: EdgeInsets.all(5),
+                width: size.width,
+                height: 90,
+                child: SvgPicture.asset("assets/icons/first.svg"),
+              ),
             ),
             Divider(
               color: sTextTitle2Color,
