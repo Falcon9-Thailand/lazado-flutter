@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:naiban/views/detail/productDetailScreen.dart';
-import 'package:naiban/views/homeScreen.dart';
+import 'package:naiban/themes/color_app.dart';
+import 'package:naiban/views/detail/category/CategoryScreen.dart';
+import 'package:naiban/views/detail/home/homeScreen.dart';
 import 'package:naiban/views/loginScreen.dart';
 import 'package:naiban/views/registerScreen.dart';
 import 'package:naiban/views/splashScreen.dart';
@@ -17,16 +18,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          primaryColor: sPrimaryColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'RSU'),
       initialRoute: '/',
       routes: {
         '/HomePage': (context) => HomeScreen(),
         '/Wellcome': (context) => Wellcome(),
         '/Register': (context) => RegisterScreen(),
         '/Login': (context) => LoginScreen(),
-        '/ProductDetailScreen': (context) => ProductDetailScreen(),
+        '/Category': (context) => CategoryScreen(),
       },
       home: SpashScreen(),
     );
