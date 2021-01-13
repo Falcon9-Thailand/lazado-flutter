@@ -17,9 +17,9 @@ TextStyle textStyleFontPrice = TextStyle(
     color: Colors.red);
 TextStyle textStyleFontPriceHead = TextStyle(
     fontFamily: 'RUS',
-    fontSize: 24,
+    fontSize: 40,
     fontWeight: FontWeight.bold,
-    color: Colors.red);
+    color: Colors.grey);
 TextStyle textStyleActive = TextStyle(
     fontFamily: 'RUS',
     fontSize: 15,
@@ -27,3 +27,8 @@ TextStyle textStyleActive = TextStyle(
     color: Colors.red);
 TextStyle textStyleNoActive =
     TextStyle(fontFamily: 'RUS', fontSize: 15, color: Colors.grey);
+TextStyle textStyleHeadName = TextStyle(
+    fontFamily: 'RUS',
+    fontSize: 40,
+    fontWeight: FontWeight.bold,
+    color: Colors.red);

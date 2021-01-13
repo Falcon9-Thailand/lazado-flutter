@@ -1,6 +1,6 @@
 class Product {
   final int price;
-  final String id, title, category, image, subTitle, description;
+  final String id, title, category, image, subTitle, description, location;
 
   Product({
     this.id,
@@ -10,6 +10,7 @@ class Product {
     this.image,
     this.subTitle,
     this.description,
+    this.location,
   });
 
   // It create an Category from JSON
@@ -22,6 +23,7 @@ class Product {
       category: json["category"],
       subTitle: json["subTitle"],
       description: json["description"],
+      location: json["location"],
     );
   }
 }
@@ -35,6 +37,7 @@ Product product = Product(
   category: "Chair",
   subTitle: "Tieton Armchair",
   description: description,
+  location: "ตำกล้วย",
 );
 
 String description =

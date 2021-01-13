@@ -10,16 +10,16 @@ Future<List<Product>> fetchProducts() async {
   final response = await http.get(apiUrl);
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    List<Product> products = (json.decode(response.body) as List)
-        .map((data) => Product.fromJson(data))
-        .toList();
-    // Return list of products
+    // หากเซิร์ฟเวอร์ส่งค่าคืนสถานะ 200 OK ,
+    // ทำ json.decode(utf8.decode(response.bodyBytes)
+    List<Product> products =
+        (json.decode(utf8.decode(response.bodyBytes)) as List)
+            .map((data) => Product.fromJson(data))
+            .toList();
+    // Return เป็น list products
     return products;
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
+    // หากเซิร์ฟเวอร์ไม่ส่งค่าคืนสถานะ !200 OK
     throw Exception('Failed to load');
   }
 }

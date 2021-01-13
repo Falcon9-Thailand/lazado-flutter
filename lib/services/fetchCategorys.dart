@@ -12,9 +12,10 @@ Future<List<Category>> fetchCategory() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    List<Category> products = (json.decode(response.body) as List)
-        .map((data) => Category.fromJson(data))
-        .toList();
+    List<Category> products =
+        (json.decode(utf8.decode(response.bodyBytes)) as List)
+            .map((data) => Category.fromJson(data))
+            .toList();
     // Return list of products
     return products;
   } else {

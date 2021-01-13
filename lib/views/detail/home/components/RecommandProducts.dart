@@ -64,11 +64,11 @@ class RecommandProducts extends StatelessWidget {
                                     ))),
                         child: Container(
                           // color: Colors.red,
-                          margin: EdgeInsets.all(10),
+                          // margin: EdgeInsets.all(10),
                           width: double.infinity,
                           child: Image.network(
                             products[index].image,
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
