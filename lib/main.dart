@@ -18,9 +18,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: sPrimaryColor,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: 'RSU'),
+        primaryColor: sPrimaryColor,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'RSU',
+        bottomSheetTheme:
+            BottomSheetThemeData(backgroundColor: Colors.transparent),
+      ),
       initialRoute: '/',
       routes: {
         '/HomePage': (context) => HomeScreen(),

@@ -7,28 +7,28 @@ const sTextTitle2Color = Color(0xFF808080);
 
 //Style font app
 TextStyle textStyleFontHead =
-    TextStyle(fontFamily: 'RUS', fontSize: 24, fontWeight: FontWeight.bold);
+    TextStyle(fontFamily: 'RSU', fontSize: 24, fontWeight: FontWeight.bold);
 TextStyle textStyleFontBody =
-    TextStyle(fontFamily: 'RUS', fontSize: 16, fontWeight: FontWeight.normal);
+    TextStyle(fontFamily: 'RSU', fontSize: 16, fontWeight: FontWeight.normal);
 TextStyle textStyleFontPrice = TextStyle(
-    fontFamily: 'RUS',
+    fontFamily: 'RSU',
     fontSize: 16,
     fontWeight: FontWeight.normal,
     color: Colors.red);
 TextStyle textStyleFontPriceHead = TextStyle(
-    fontFamily: 'RUS',
+    fontFamily: 'RSU',
     fontSize: 40,
     fontWeight: FontWeight.bold,
     color: Colors.grey);
 TextStyle textStyleActive = TextStyle(
-    fontFamily: 'RUS',
+    fontFamily: 'RSU',
     fontSize: 15,
     fontWeight: FontWeight.bold,
     color: Colors.red);
 TextStyle textStyleNoActive =
-    TextStyle(fontFamily: 'RUS', fontSize: 15, color: Colors.grey);
+    TextStyle(fontFamily: 'RSU', fontSize: 15, color: Colors.grey);
 TextStyle textStyleHeadName = TextStyle(
-    fontFamily: 'RUS',
+    fontFamily: 'RSU',
     fontSize: 40,
     fontWeight: FontWeight.bold,
     color: Colors.red);
