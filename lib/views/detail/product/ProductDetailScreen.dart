@@ -5,6 +5,9 @@ import 'package:naiban/models/Products.dart';
 import 'package:naiban/themes/color_app.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import 'components/appbar.dart';
+import 'components/image_header.dart';
+
 class ProductDetailScreen extends StatefulWidget {
   final Product products;
 
@@ -221,87 +224,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Container(
-            width: size.width,
-            height: 250,
-            child: Image.network(
-              widget.products.image,
-              fit: BoxFit.cover,
-            ),
-          ),
-          SafeArea(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 10),
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.black,
-                        size: 18,
-                      ),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10.0, left: 5),
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.search,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 10.0, left: 5, right: 10),
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                        ),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.shopping_cart,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
+          ImageHeader(size: size, widget: widget),
+          Appbar(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

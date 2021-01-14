@@ -3,19 +3,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:naiban/themes/color_app.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginByEmailScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginByEmailScreenState createState() => _LoginByEmailScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginByEmailScreenState extends State<LoginByEmailScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  void navigationLoginByEmailScreen() {
-    Navigator.of(context).pushReplacementNamed('/LoginByEmailScreen');
+  void navigationPageHome() {
+    Navigator.of(context).pushReplacementNamed('/HomePage');
   }
 
-  void navigationLoginByPhoneNumberScreen() {
-    Navigator.of(context).pushReplacementNamed('/LoginByPhoneNumberScreen');
+  void navigationPageWel() {
+    Navigator.of(context).pushReplacementNamed('/Wellcome');
   }
 
   @override
@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: size.height * 0.4,
                     alignment: Alignment.center,
                     child: SvgPicture.asset(
-                      "assets/icons/login-icon.svg",
+                      "assets/icons/password-icon.svg",
                       height: 180,
                       width: 180,
                     ),
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Form(
                     child: Column(
                       key: _formKey,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.symmetric(
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 TextStyle(fontSize: 15.0, color: Colors.black),
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'เบอร์โทรศัพทร์ / อีเมล',
+                              hintText: 'รหัสผ่าน',
                               filled: true,
                               fillColor: Colors.grey.withOpacity(0.2),
                               contentPadding: const EdgeInsets.only(
@@ -82,6 +82,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 50),
+                          child: GestureDetector(
+                              onTap: () => print("ลืมรหัสผ่าน"),
+                              child: Text(
+                                " ลืมรหัสผ่าน",
+                                style: TextStyle(color: sPrimaryColor),
+                              )),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 10),
@@ -91,11 +106,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: RaisedButton(
                               color: sPrimaryColor,
                               onPressed: () {
-                                navigationLoginByEmailScreen();
+                                navigationPageHome();
                                 // Validate returns true if the form is valid, or false
                                 // otherwise.
                                 // if (_formKey.currentState.validate()) {
-
                                 // If the form is valid, display a Snackbar.
                                 //   Scaffold.of(context).showSnackBar(
                                 //       SnackBar(content: Text('Login')));
@@ -113,58 +127,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                   side: BorderSide(color: sPrimaryColor)),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Divider(
-                      color: Colors.black,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SignInButtonBuilder(
-                          height: 50,
-                          icon: Icons.email,
-                          text: "Ignored for mini button",
-                          mini: true,
-                          onPressed: () {},
-                          backgroundColor: sPrimaryColor,
-                        ),
-                        SignInButtonBuilder(
-                          height: 50,
-                          icon: Icons.email,
-                          text: "Ignored for mini button",
-                          mini: true,
-                          onPressed: () {},
-                          backgroundColor: sPrimaryColor,
-                        ),
-                        SignInButtonBuilder(
-                          height: 50,
-                          icon: Icons.email,
-                          text: "Ignored for mini button",
-                          mini: true,
-                          onPressed: () {},
-                          backgroundColor: sPrimaryColor,
-                        ),
-                        SignInButtonBuilder(
-                          height: 50,
-                          icon: Icons.email,
-                          text: "Ignored for mini button",
-                          mini: true,
-                          onPressed: () {},
-                          backgroundColor: sPrimaryColor,
                         ),
                       ],
                     ),

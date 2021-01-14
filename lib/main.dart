@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:naiban/themes/color_app.dart';
 import 'package:naiban/views/detail/category/CategoryScreen.dart';
 import 'package:naiban/views/detail/home/homeScreen.dart';
+import 'package:naiban/views/loginByEmailScreen.dart';
+import 'package:naiban/views/loginByPhoneNumberScreen.dart';
 import 'package:naiban/views/loginScreen.dart';
 import 'package:naiban/views/registerScreen.dart';
 import 'package:naiban/views/splashScreen.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         '/Register': (context) => RegisterScreen(),
         '/Login': (context) => LoginScreen(),
         '/Category': (context) => CategoryScreen(),
+        '/LoginByEmailScreen': (context) => LoginByEmailScreen(),
+        '/LoginByPhoneNumberScreen': (context) => LoginByPhoneNumberScreen(),
       },
       home: SpashScreen(),
     );
