@@ -245,26 +245,30 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.location_on,
-                              color: Colors.red,
-                              size: 20,
-                            ),
                             Text(
-                              widget.products.location,
-                              style: textStyleFontHead,
+                              widget.products.title,
+                              style: textGoogleFontHead,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.add_business,
+                                  color: Colors.red.withOpacity(0.6),
+                                  size: 20,
+                                ),
+                                Text(
+                                  ' ' + widget.products.location,
+                                  style: textStyleFontHead,
+                                ),
+                              ],
                             )
                           ],
                         ),
                         Text(
-                          widget.products.title,
-                          style: textStyleHeadName,
-                        ),
-                        Text(
                           widget.products.price.toString() + '฿',
-                          style: textStyleFontPriceHead,
+                          style: textStyleHeadName,
                         ),
                         Text(
                           widget.products.description.toString(),

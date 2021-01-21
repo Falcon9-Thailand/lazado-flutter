@@ -15,9 +15,9 @@ class RecommandProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle textStyleBodyFont = TextStyle(
-        fontFamily: 'RUS', fontSize: 16, fontWeight: FontWeight.normal);
+        fontFamily: 'RSU', fontSize: 16, fontWeight: FontWeight.normal);
     TextStyle textStyleBodyFontPrice = TextStyle(
-        fontFamily: 'RUS',
+        fontFamily: 'RSU',
         fontSize: 16,
         fontWeight: FontWeight.bold,
         color: Colors.red);

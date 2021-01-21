@@ -4,7 +4,7 @@ import 'package:naiban/services/fetchCategorys.dart';
 import 'package:naiban/services/fetchProducts.dart';
 import 'package:naiban/themes/color_app.dart';
 import 'package:naiban/views/detail/category/CategoryScreen.dart';
-import 'package:naiban/views/loginScreen.dart';
+import 'package:naiban/views/detail/login/loginScreen.dart';
 import 'package:naiban/views/registerScreen.dart';
 
 import 'components/RecommandProducts.dart';
@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isActive = false;
   int isSelectIndex = 0;
   Product product;
+  bool fetchData;
   @override
   void initState() {
     super.initState();
@@ -45,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // list menu
               Container(

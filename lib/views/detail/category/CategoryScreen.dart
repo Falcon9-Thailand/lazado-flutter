@@ -31,7 +31,7 @@ class CategoryScreen extends StatelessWidget {
               children: List.generate(
             category.length,
             (index) => Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 0),
               child: GestureDetector(
                 onTap: () => Navigator.push(
                     context,
@@ -40,7 +40,7 @@ class CategoryScreen extends StatelessWidget {
                               category: category[index],
                             ))),
                 child: Container(
-                    margin: EdgeInsets.only(left: 10),
+                    // margin: EdgeInsets.only(left: 10),
                     alignment: Alignment.center,
                     width: 270,
                     height: 150,
@@ -48,7 +48,7 @@ class CategoryScreen extends StatelessWidget {
                         color: Colors.white,
                         image: DecorationImage(
                           image: NetworkImage(category[index].image),
-                          fit: BoxFit.contain,
+                          fit: BoxFit.cover,
                         )),
                     child: Container(
                       alignment: Alignment.center,

@@ -11,14 +11,6 @@ class _LoginByPhoneNumberScreenState extends State<LoginByPhoneNumberScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        Container(
-          height: size.height,
-          width: size.width,
-          color: Colors.red,
-        )
-      ],
-    );
+    return Scaffold(backgroundColor: Colors.red, body: Container());
   }
 }

@@ -31,23 +31,12 @@ class _DetailCategoryScreenState extends State<DetailCategoryScreen> {
         actions: [],
       ),
       body: Container(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Products
-              Container(
-                width: size.width,
-                child: FutureBuilder(
-                  future: fetchProducts(),
-                  builder: (context, snapshot) => snapshot.hasData
-                      ? RecommandProducts(products: snapshot.data)
-                      : Center(child: Image.asset("assets/ripple.gif")),
-                ),
-              ),
-            ],
-          ),
+        child: FutureBuilder(
+          future: fetchProducts(),
+          builder: (context, snapshot) => snapshot.hasData
+              ? SingleChildScrollView(
+                  child: RecommandProducts(products: snapshot.data))
+              : Center(child: Image.asset("assets/ripple.gif")),
         ),
       ),
     );
