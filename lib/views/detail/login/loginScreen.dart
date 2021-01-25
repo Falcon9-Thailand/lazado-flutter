@@ -34,34 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     image: "assets/icons/login-icon.svg",
                   ),
                   SignForm(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SignInButton(
-                          Buttons.Facebook,
-                          mini: true,
-                          onPressed: () {},
-                        ),
-                        SignInButton(
-                          Buttons.Email,
-                          mini: true,
-                          onPressed: () {},
-                        ),
-                        SignInButton(
-                          Buttons.Twitter,
-                          mini: true,
-                          onPressed: () {},
-                        ),
-                        SignInButton(
-                          Buttons.LinkedIn,
-                          mini: true,
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),
